@@ -1,14 +1,7 @@
 class StaticPagesController < ApplicationController
-  def index
+  def home
   end
 
-  def create
-    
-  end
-
-  def edit
-  end
-
-  def show
+  def help
   end
 end

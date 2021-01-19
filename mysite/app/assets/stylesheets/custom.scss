@@ -1,2 +1,96 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.sitename{
+  margin:15px 0 15px;
+  }
+  .sitename a{
+  font-size:3em;
+  color: inherit;
+  }
+   
+   
+  .navbar .navbar-inner {
+  padding: 0;
+  }
+   
+  .navbar .nav {
+  margin: 0;
+  display: table;
+  width: 100%;
+  }
+   
+  .navbar .nav li {
+  display: table-cell;
+  float: none;
+  text-align: center;
+  width: 25%;
+  }
+   
+  .navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, .75);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+   
+  .navbar .nav li:last-child a {
+  border-right: 0;
+  border-radius: 0 3px 3px 0;
+  }
+
+  
+  div.img-hidden {
+    background-image: url("20190806_2099476.jpg"); 
+    background-position:center bottom;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+h1,h2,.container-fluid img-hidden {
+  text-align: center;
+  padding-top: 20px;
+  color: #ffffff;
+}
+
+a.introduce  {
+  font-size: 40px;
+  color: lavenderblush;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.container-m{
+  width: 100%;
+}  
+
+  div.card-deck {
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  div.card {
+    width: 33%;
+    text-align: center;
+  }

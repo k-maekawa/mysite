@@ -1,0 +1,27 @@
+<!-- Site Name -->
+<div class="sitename">
+  <div class="container">
+     <%= link_to "SKILL HOUSE", root_path, id: "logo" %>
+  </div>
+</div>
+ 
+<!-- Static navbar -->
+<div class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+    </div>
+   <div class="navbar-collapse collapse">
+     <ul class="nav navbar-nav">
+        <li><%= link_to "Home",    root_path %></li>
+        <li><%= link_to "Help",    help_path %></li>
+        <li><%= link_to "Log in", '#' %></li>
+     </ul>
+   </div><!--/.nav-collapse -->
+ </div>
+</div>

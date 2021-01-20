@@ -1,2 +1,92 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="container-fluid img-hidden">
+  
+  <h1>Welcome to the Sample App</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="https://railstutorial.jp/" class="introduce">Ruby on Rails Tutorial</a>
+    sample application.
+  </h2>
+</div>
+
+
+<div class="container">
+    <h1 class = "erea-top">エリアごとに検索</h1>
+  <div class="btn-toolbar">
+    <h3 class="erea-tokyo">東京</h3>
+  <div class="btn-group">
+    <button type="button" class="btn btn-outline-secondary">渋谷/青山</button>
+    <button type="button" class="btn btn-outline-secondary">新宿/中野</button>
+    <button type="button" class="btn btn-outline-secondary">池袋/赤羽</button>
+    <button type="button" class="btn btn-outline-secondary">品川/蒲田</button>
+    <button type="button" class="btn btn-outline-secondary">上野/北千住</button>
+    <button type="button" class="btn btn-outline-secondary">下北沢/吉祥寺</button>
+    <button type="button" class="btn btn-outline-secondary">飯田橋/四谷</button>
+    <button type="button" class="btn btn-outline-secondary">赤坂/大手町</button>
+    <button type="button" class="btn btn-outline-secondary">銀座/門前仲町</button>
+    <button type="button" class="btn btn-outline-secondary">錦糸町/押上</button>
+    <button type="button" class="btn btn-outline-secondary">自由が丘/二子玉川</button>
+    <button type="button" class="btn btn-outline-secondary">調布/立川</button>
+  </div>
+ </div>
+</div>
+
+<div class= "container">
+　<h1 class = "kodawari-top">こだわり条件で検索</h1>
+<div class="card-deck">
+  <div class="card">
+    <%= link_to image_tag("853b214ac5db77a93a6ec9db538fb43a_t.jpeg", alt: "Rails logo", width: "200px"),
+                      "https://rubyonrails.org/" %>
+   <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <%= link_to image_tag("450-20171209210522.jpg", alt: "Rails logo", width: "200px"),
+                      "https://rubyonrails.org/" %>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card hasional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <%= link_to image_tag("a0155348_6124829.jpg", alt: "Rails logo", width: "200px",height: "200px"),
+                      "https://rubyonrails.org/" %>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is  additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <%= link_to image_tag("original.jpg", alt: "Rails logo", width: "200px" ,height: "200px"),
+                      "https://rubyonrails.org/" %>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is  additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class ="card-img">
+      <%= link_to image_tag("003aa094f8051ab0bb9f0a733d26e766_s.jpg", alt: "Rails logo", width: "200px", height: "200px"),
+                      "003aa094f8051ab0bb9f0a733d26e766_s.jpg" %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is  additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
+
+ 

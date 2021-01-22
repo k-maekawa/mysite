@@ -6,7 +6,7 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
-import "../../../../mysite/app/assets/javascripts/javascripts/packs/node_modules/channels"
+
 
 require("@rails/ujs").start()
 require("turbolinks").start()

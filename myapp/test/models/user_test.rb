@@ -49,11 +49,6 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  test "authenticated? should return false for a user with nil digest" do
-    assert_not @user.authenticated?('')
-  end
-
-
   test "email addresses should be unique" do
     duplicate_user = @user.dup
     @user.save

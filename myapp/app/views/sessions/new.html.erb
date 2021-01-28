@@ -1,5 +1,5 @@
 <% provide(:title, "Log in")%>
-<h1>ログイン</h1>
+<h1 class="login-capital">ログイン</h1>
 <div class ="row">
   <div class ="col-md-6 col-md-offset-3">
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
@@ -18,6 +18,11 @@
       <%= f.submit "ログイン", class: "btn btn-primary" %>
     <% end %>
 
-    <p>まだ登録してない人はこちら <%= link_to "新規登録", signup_path %>
+    <p>まだ登録してない人はこちらから <%= link_to "新規登録", signup_path %>
+
+  </div>
+  <div class ="col-md-6 col-md-offset-3", height:"50px">
+   <h2 class="login-capital">ゲストログインの場合はこちらから<h2>
+      <%= link_to 'ゲストログイン（閲覧用）', guest_login_path, method: :post, class: "btn btn-warning" %>
   </div>
 </div>

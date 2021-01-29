@@ -1,0 +1,25 @@
+<% provide(:title, 'Property New') %>
+<h1>物件新規登録</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @user, local: true) do |f| %>
+      <%= f.label :house_name %>
+      <%= f.text_field :house_name %>
+
+      <%= f.label : %>
+      <%= f.range_field :house_skill %>
+
+      <%= f.label :area_name %>
+      <%= f.select :area_name, {'渋谷/青山': 1, '新宿/中野': 2, '池袋/赤羽': 3, '品川/蒲田': 4, '上野/北千住': 5, 
+                          '下北沢/吉祥寺': 6, '飯田橋/四谷': 7, '赤坂/大手町': 8, '銀座/門前仲町': 9, '錦糸町/押上':10,
+                           '自由が丘/二子玉川': 11,'調布/立川': 12 },
+                         { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

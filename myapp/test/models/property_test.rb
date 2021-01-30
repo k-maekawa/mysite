@@ -1,6 +1,7 @@
 require "test_helper"
 
 class PropertyTest < ActiveSupport::TestCase
+<<<<<<< HEAD
   
   def setup
     @property = Property.new(house_name: "渋谷区シェアハウス会館",
@@ -97,3 +98,9 @@ class PropertyTest < ActiveSupport::TestCase
     assert_not duplicate_property.valid?
   end
 end
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+end
+>>>>>>> 833576279c5b0e20a45d39395c1af10f6f2153a8

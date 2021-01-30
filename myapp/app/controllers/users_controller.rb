@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 before_action :logged_in_user, only: [:edit, :update, :index, :destroy]
 before_action :correct_user,   only: [:edit, :update]
 before_action :admin_user,     only: :destroy
+before_action :check_guest, only: [:update, :destroy]
 
   def show
     @user = User.find(params[:id])
@@ -69,5 +70,11 @@ private
 
   def admin_user
     redirect_to(root_url) unless current_user.admin?
+  end
+
+  def check_guest
+    if @user.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。'
+    end
   end
 end

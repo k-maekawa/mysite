@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_022855) do
+ActiveRecord::Schema.define(version: 2021_01_30_011102) do
 
   create_table "properties", force: :cascade do |t|
     t.string "house_name"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2021_01_29_022855) do
     t.integer "house_distance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rent"
+    t.index ["house_adress"], name: "index_properties_on_house_adress", unique: true
+    t.index ["house_name"], name: "index_properties_on_house_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

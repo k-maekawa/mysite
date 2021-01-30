@@ -1,7 +1,6 @@
 require "test_helper"
 
 class PropertyTest < ActiveSupport::TestCase
-<<<<<<< HEAD
   
   def setup
     @property = Property.new(house_name: "渋谷区シェアハウス会館",
@@ -22,6 +21,11 @@ class PropertyTest < ActiveSupport::TestCase
     assert_not @property.valid?
   end
 
+  test "house_name should not be too short" do
+    @property.house_name = "a" * 2
+    assert_not @property.valid?
+  end
+
   test "house_name should not be too long" do
     @property.house_name = "a" * 51
     assert_not @property.valid?
@@ -39,6 +43,11 @@ class PropertyTest < ActiveSupport::TestCase
 
   test "house_adress should be present" do
     @property.house_adress = "     "
+    assert_not @property.valid?
+  end
+
+  test "house_adress should not be too short" do
+    @property.house_adress = "a" * 9
     assert_not @property.valid?
   end
 
@@ -73,7 +82,7 @@ class PropertyTest < ActiveSupport::TestCase
   end
   
   test "house_distance should not be too long" do
-    @property.house_distance = 1 * 3
+    @property.house_distance = 1 * 40
     assert_not @property.valid?
   end
 
@@ -98,9 +107,3 @@ class PropertyTest < ActiveSupport::TestCase
     assert_not duplicate_property.valid?
   end
 end
-=======
-  # test "the truth" do
-  #   assert true
-  # end
-end
->>>>>>> 833576279c5b0e20a45d39395c1af10f6f2153a8

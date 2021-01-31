@@ -6,7 +6,7 @@
 </div>
  
 <!-- Static navbar -->
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default main" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,7 +17,7 @@
       </button>
     </div>
    <div class="navbar-collapse collapse">
-     <ul class="nav navbar-nav">
+     <ul class="nav navbar-nav top-view">
         <li><%= link_to "Home",    root_path %></li>
         <li><%= link_to "Help",    help_path %></li>
          <% if logged_in? %>

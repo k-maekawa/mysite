@@ -1,11 +1,10 @@
 <% provide(:title, 'All Properties') %>
-<h1>All users</h1>
+<h1>All properties</h1>
 
-<ul class="users">
-  <% @properties.each do |property| %>
-    <li>
-      <%= gravatar_for property, size: 50 %>
-      <%= link_to property.name, user %>
-    </li>
-  <% end %>
+<%= will_paginate %>
+
+<ul class="properties">
+  <%= render @properties %>
 </ul>
+
+<%= will_paginate %>

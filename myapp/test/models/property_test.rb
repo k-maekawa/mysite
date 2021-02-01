@@ -7,7 +7,7 @@ class PropertyTest < ActiveSupport::TestCase
                              area_name: "青山・渋谷",
                              house_adress: "東京都渋谷区神南２丁目２",
                              house_station: "渋谷",
-                             house_skill: "プログラミング",
+                             house_skill: "Web制作エンジニア",
                              house_distance: 8,
                              rent: 50000)
   end
@@ -47,12 +47,12 @@ class PropertyTest < ActiveSupport::TestCase
   end
 
   test "house_adress should not be too short" do
-    @property.house_adress = "a" * 9
+    @property.house_adress = "a" * 2
     assert_not @property.valid?
   end
 
   test "house_adress should not be too long" do
-    @property.house_adress = "a" * 101
+    @property.house_adress = "a" * 31
     assert_not @property.valid?
   end
 

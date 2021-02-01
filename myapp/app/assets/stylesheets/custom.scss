@@ -141,7 +141,12 @@ div.form-group{
   }
 
 
+  div.row {
+    padding-bottom: 50px;
+  }
+
   /* sidebar */
+
 
 aside {
   section.user_info {
@@ -230,15 +235,25 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+    height: 100px;
   }
 }
 
+/* New html */
 
 .login-capital {
   color: black;
 }
 
 
-div.row {
-  padding-bottom: 50px;
+/* Properties index */
+
+.properties {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }

@@ -1,95 +1,88 @@
 <div class="container-fluid jumbotron home-top">
-  
+
   <h1>ようこそSKILLHOUSEへ！</h1>
 
   <h2>
     シェアハウスしながら爆速でスキル伸ばしませんか？<br>
     当サイトSKILLHOUSEはキャリアアップに特化したシェアハウスを<br>あなたへご紹介します。
   </h2>
-  
 
-     <form class="form-inline">
-     <div class="form-group">
-       <input type="form" class="form-control", placeholder="検索ワードを入れてください">
-     </div>
-     <button type="submit" class="btn btn-primary">検索</button>
-   </form>
+
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="form" class="form-control" , placeholder="検索ワードを入れてください">
+    </div>
+    <button type="submit" class="btn btn-primary">検索</button>
+  </form>
 
 </div>
 
 
 <div class="container">
-    <h1 class = "erea-top">エリアごとに検索</h1>
+  <h1 class="erea-top">エリアごとに検索</h1>
   <div class="btn-toolbar">
     <h3 class="erea-tokyo">東京</h3>
-  <div class="btn-group">
-    <%= link_to "渋谷/青山" ,"#" ,class: "btn btn-outline-secondary" %>
-    <%= link_to "新宿/中野" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "池袋/赤羽" ,"#" ,class: "btn btn-outline-secondary" %>
-    <%= link_to "品川/蒲田" ,"#" ,class: "btn btn-outline-secondary" %>
-    <%= link_to "上野/北千住" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "下北沢/吉祥寺" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "飯田橋/四谷" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "赤坂/大手町" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "銀座/門前仲町" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "錦糸町/押上" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "自由が丘/二子玉川" ,"#" ,class:"btn btn-outline-secondary" %>
-    <%= link_to "調布/立川" ,"#" ,class:"btn btn-outline-secondary" %>
+    <div class="btn-group">
+      <%= link_to "渋谷/青山" ,"#" ,class: "btn btn-outline-secondary" %>
+      <%= link_to "新宿/中野" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "池袋/赤羽" ,"#" ,class: "btn btn-outline-secondary" %>
+      <%= link_to "品川/蒲田" ,"#" ,class: "btn btn-outline-secondary" %>
+      <%= link_to "上野/北千住" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "下北沢/吉祥寺" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "飯田橋/四谷" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "赤坂/大手町" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "銀座/門前仲町" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "錦糸町/押上" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "自由が丘/二子玉川" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "調布/立川" ,"#" ,class:"btn btn-outline-secondary" %>
+    </div>
   </div>
- </div>
 </div>
 
-<div class= "container">
-　<h1 class = "kodawari-top">こだわり条件で検索</h1>
-<div class="card-deck">
-  <div class="card">
-    <%= link_to image_tag("864bdd402c2cd2d5dabae98a0bddeaca.jpg", alt: "Rails logo", width: "200px",height: "200px"),
+<div class="container">
+  　<h1 class="kodawari-top">こだわり条件で検索</h1>
+  <div class="card-deck">
+    <div class="card">
+      <%= link_to image_tag("864bdd402c2cd2d5dabae98a0bddeaca.jpg", alt: "Rails logo", width: "200px",height: "200px"),
                       "https://rubyonrails.org/" %>
-   <div class="card-body">
-      <h4 class="card-title">エンジニア 向け物件</h4>
-      <p class="card-text">エンジニアを目指す仲間を<br>見つけることができる物件を<br>取り揃えております！</p>
+      <div class="card-body">
+        <h4 class="card-title">エンジニア向け物件</h4>
+        <p class="card-text">エンジニアを目指す仲間を<br>見つけることができる物件を<br>取り揃えております！</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <%= link_to image_tag("450-20171209210522.jpg", alt: "Rails logo", width: "200px"),
+    <div class="card">
+      <%= link_to image_tag("450-20171209210522.jpg", alt: "Rails logo", width: "200px"),
                       "https://rubyonrails.org/" %>
-    <div class="card-body">
-      <h4 class="card-title">8畳以上のお部屋</h4>
-      <p class="card-text">大きな部屋に住みたい！<br>こだわりを持ったお客様に<br>おすすめ！</p>
+      <div class="card-body">
+        <h4 class="card-title">8畳以上のお部屋</h4>
+        <p class="card-text">大きな部屋に住みたい！<br>こだわりを持ったお客様に<br>おすすめ！</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <%= link_to image_tag("a0155348_6124829.jpg", alt: "Rails logo", width: "200px",height: "200px"),
+    <div class="card">
+      <%= link_to image_tag("a0155348_6124829.jpg", alt: "Rails logo", width: "200px",height: "200px"),
                       "https://rubyonrails.org/" %>
-    <div class="card-body">
-      <h4 class="card-title">駅近</h4>
-      <p class="card-text">家が駅から近くないとイヤだ！そんなお客様に最寄り駅から<br>徒歩5分圏内の物件を紹介！</p>
+      <div class="card-body">
+        <h4 class="card-title">駅近</h4>
+        <p class="card-text">家が駅から近くないとイヤだ！そんなお客様に最寄り駅から<br>徒歩5分圏内の物件を紹介！</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <%= link_to image_tag("original.jpg", alt: "Rails logo", width: "200px" ,height: "200px"),
+    <div class="card">
+      <%= link_to image_tag("original.jpg", alt: "Rails logo", width: "200px" ,height: "200px"),
                       "https://rubyonrails.org/" %>
-    <div class="card-body">
-      <h4 class="card-title">個室</h4>
-      <p class="card-text">シェアハウスはしたいけど<br>プライベートの時間も<br>大切にしたい方におすすめ！</p>
+      <div class="card-body">
+        <h4 class="card-title">個室</h4>
+        <p class="card-text">シェアハウスはしたいけど<br>プライベートの時間も<br>大切にしたい方におすすめ！</p>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <div class ="card-img">
-      <%= link_to image_tag("003aa094f8051ab0bb9f0a733d26e766_s.jpg", alt: "Rails logo", width: "200px", height: "200px"),
+    <div class="card">
+      <div class="card-img">
+        <%= link_to image_tag("003aa094f8051ab0bb9f0a733d26e766_s.jpg", alt: "Rails logo", width: "200px", height: "200px"),
                       "003aa094f8051ab0bb9f0a733d26e766_s.jpg" %>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">家賃5万円以下</h4>
-      <p class="card-text">学生,地方から上京して<br>お金を抑えたい方は必見です！お安い物件を紹介します！</p>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">家賃5万円以下</h4>
+        <p class="card-text">学生,地方から上京して<br>お金を抑えたい方は必見です！お安い物件を紹介します！</p>
+      </div>
     </div>
   </div>
- </div>
 </div>
-
-
-
-
-
-
- 

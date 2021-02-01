@@ -25,7 +25,7 @@ test "invalid property infomation make" do
                                                   area_name: "青山・渋谷",
                                                   house_adress: "東京都渋谷区神南２丁目３",
                                                   house_station: "渋谷",
-                                                  house_skill: "プログラミング",
+                                                  house_skill: "Web制作エンジニア",
                                                   house_distance: 8,
                                                   rent: 50000}}
       end

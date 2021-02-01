@@ -1,0 +1,7 @@
+<li>
+  <%= link_to property.house_name, property %>
+  <% if current_user.admin? %>
+     <%= link_to "ユーザー削除", property, method: :delete,
+                                  data: { confirm: "削除してもよろしいでしょうか？?" } %>
+  <% end %>
+</li>

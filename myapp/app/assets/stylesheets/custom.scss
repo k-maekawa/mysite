@@ -1,66 +1,69 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
-.navbar-brand {
-  font-size: 30px;
-}
-
-div.navbar-default {
-  margin: 0px;
-}
+   
+/* header */
 
 .sitename{
   margin:15px 0 15px;
   }
   .sitename a{
   font-size:3em;
-  color: inherit;
+  color: darkgray;
+  font-family: 'Bangers', cursive;
   }
-   
-   
-  .navbar .navbar-inner {
-  padding: 0;
-  }
-   
-  .navbar .nav {
+
+.main {
+  margin: 0px;
+ }
+
+.top-view {
   margin: 0;
   display: table;
   width: 100%;
   }
    
-  .navbar .nav li {
+  .top-view li {
   display: table-cell;
   float: none;
   text-align: center;
   width: 25%;
+  font-family: 'Bangers', cursive;
   }
    
-  .navbar .nav li a {
+  .top-view li a {
     font-weight: bold;
     text-align: center;
     border-left: 1px solid rgba(255, 255, 255, .75);
     border-right: 1px solid rgba(0, 0, 0, .1);
     }
    
-  .navbar .nav li:last-child a {
+  .top-view li:last-child a {
   border-right: 0;
   border-radius: 0 3px 3px 0;
   }
+
+  /* home */
   
-  div.img-hidden {
-    background-image: url("20190806_2099476.jpg"); 
+  .home-top {
+    background-image: url("535998.jpg"); 
     background-position:center bottom;
+    background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
     width: 100%;
     overflow: hidden;
   }
 
-h1,h2,.container-fluid img-hidden {
+  .form-home {
+    text-align: center;
+  }
+
+h1,h2,.home-top {
   text-align: center;
   padding-top: 20px;
-  color: #ffffff;
+  color: black;
+  padding-bottom: 50px;
+  font-family: 'Bangers', cursive;
 }
 
 a.introduce  {
@@ -69,32 +72,13 @@ a.introduce  {
 }
 
 
+/* erea-serch */
 
-
-
-
-  div.card-deck {
-    display: flex;
-    margin: 50px 0;
-    width: 100%;
+  .erea-tokyo {
+    color: black;
+    padding-left: 20px;
+    margin: 10px;
   }
-
-  div.card {
-    width: 20%;
-    text-align: center;
-    padding: 10px;
-    &:hover {
-      background-color: #c9c9c9;}
-  }
- 
-
-  div.form-group{
-    width: 200px;
-    margin: 20px;
-  }
-
-
-
 
 .erea-top, .kodawari-top {
   color: black;
@@ -117,24 +101,38 @@ a.introduce  {
     border-radius: 20px;
   }
 
-  .erea-tokyo {
-    color: black;
-    padding-left: 20px;
-    margin: 10px;
-  }
 
+/* home-card */
 
- 
+div.card-deck {
+  display: flex;
+  margin: 50px 0;
+  width: 100%;
+}
 
+h4.card-title {
+  font-weight : bold;
+}
 
+div.card {
+  width: 20%;
+  text-align: center;
+  padding: 10px;
+  &:hover {
+    background-color: #c9c9c9;}
+}
 
+div.form-group{
+  width: 200px;
+  margin: 20px;
+}
+
+/* footer */
 
   footer {
     background-color: gainsboro;
     padding: 30px 10px;
   }
-
-
 
   @mixin box_sizing {
     -moz-box-sizing:    border-box;
@@ -143,7 +141,12 @@ a.introduce  {
   }
 
 
+  div.row {
+    padding-bottom: 50px;
+  }
+
   /* sidebar */
+
 
 aside {
   section.user_info {
@@ -232,15 +235,25 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+    height: 100px;
   }
 }
 
+/* New html */
 
 .login-capital {
   color: black;
 }
 
 
-div.row {
-  padding-bottom: 50px;
+/* Properties index */
+
+.properties {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }

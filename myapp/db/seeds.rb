@@ -20,7 +20,8 @@ Property.create!(house_name: "心家 渋谷うすき",
                  house_station: "恵比寿",
                  house_skill: "Web制作エンジニア",
                  house_distance: 9,
-                 rent: 50000)
+                 rent: 50000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "リバーサイドテラス青葉代官山",
                  area_name: "青山・渋谷",
@@ -28,7 +29,8 @@ Property.create!(house_name: "リバーサイドテラス青葉代官山",
                  house_station: "池尻大橋",
                  house_skill: "声優",
                  house_distance: 7,
-                 rent: 32000)
+                 rent: 32000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "恵比寿の家",
                  area_name: "青山・渋谷",
@@ -36,7 +38,8 @@ Property.create!(house_name: "恵比寿の家",
                  house_station: "渋谷",
                  house_skill: "弁護士",
                  house_distance: 15,
-                 rent: 79000)
+                 rent: 79000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "ARDEN 新宿",
                  area_name: "新宿・中野",
@@ -44,7 +47,8 @@ Property.create!(house_name: "ARDEN 新宿",
                  house_station: "新大久保",
                  house_skill: "俳優",
                  house_distance: 3,
-                 rent: 77000)
+                 rent: 77000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "Modelia Colors WAKAMATSUCHO",
                  area_name: "新宿・中野",
@@ -52,7 +56,8 @@ Property.create!(house_name: "Modelia Colors WAKAMATSUCHO",
                  house_station: "早稲田",
                  house_skill: "通訳（英語）",
                  house_distance: 6,
-                 rent: 69000)
+                 rent: 69000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "コンパルティード 中野",
                  area_name: "新宿・中野",
@@ -60,7 +65,8 @@ Property.create!(house_name: "コンパルティード 中野",
                  house_station: "沼袋",
                  house_skill: "公務員",
                  house_distance: 3,
-                 rent: 52000)
+                 rent: 52000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "RYOZAN PARK",
                  area_name: "池袋・赤羽",
@@ -68,7 +74,8 @@ Property.create!(house_name: "RYOZAN PARK",
                  house_station: "巣鴨",
                  house_skill: "会計士",
                  house_distance: 2,
-                 rent: 78000)
+                 rent: 78000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "東京シェア＋",
                  area_name: "池袋・赤羽",
@@ -76,7 +83,8 @@ Property.create!(house_name: "東京シェア＋",
                  house_station: "西日暮里",
                  house_skill: "起業家",
                  house_distance: 7,
-                 rent: 69000)
+                 rent: 69000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "TerraceCamp 洗足池",
                  area_name: "品川・蒲田",
@@ -84,7 +92,8 @@ Property.create!(house_name: "TerraceCamp 洗足池",
                  house_station: "洗足池",
                  house_skill: "通訳（英語）",
                  house_distance: 15,
-                 rent: 40000)
+                 rent: 40000,
+                 property_img: "images.jpg")
 
 Property.create!(house_name: "COURI025 下目黒",
                  area_name: "青山・渋谷",
@@ -92,7 +101,8 @@ Property.create!(house_name: "COURI025 下目黒",
                  house_station: "目黒",
                  house_skill: "Web開発エンジニア",
                  house_distance: 18,
-                 rent: 64000)
+                 rent: 64000,
+                 property_img: "images.jpg")
 
 properties = Property.order(:room_number).take(6)
 3.times do

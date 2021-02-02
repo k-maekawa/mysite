@@ -2,17 +2,21 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= @property.house_name %>
-      </h1>
-    </section>
+    <h3>
+     <%= @property.house_name %>
+    </h3>
+    <p>
+      <strong>物件写真</strong>
+      <%= image_tag @property.property_img.url if @property.property_img? %>
+    </p>
+
+    <ul class="list-group">
+     <li class="list-group-item"><%= @property.rent %></li>
+     <li class="list-group-item"><%= @property.area_name %></li>
+     <li class="list-group-item"><%= @property.house_station %></li>
+     <li class="list-group-item"><%= @property.house_distance %></li>
+     <li class="list-group-item"><%= @property.house_skill %></li>
+    <ul class="list-group">
+      </section>
   </aside>
-  <div class="col-md-8">
-    <% if @property.rooms.any? %>
-      <h3>部屋情報一覧 (<%= @property.rooms.count %>)件</h3>
-      <ol class="rooms">
-        <%= render @rooms %>
-      </ol>
-      <%= will_paginate @rooms %>
-    <% end %>
 </div>

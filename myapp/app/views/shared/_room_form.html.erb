@@ -12,12 +12,12 @@
     <%= f.label :room_number, "広さ" %>
     <%= f.text_field :room_number, class: 'form-control', :placeholder => "例: 10.7" %>
 
-    <%= f.label :room_type, "物件名" %>
+    <%= f.label :room_type, "お部屋のタイプ" %>
     <%= f.select :room_type,  {'個室': 1, 'ドミトリー': 2, 'ルームシェア': 3},
                          { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
 
-    <%= f.label :room_number, "物件名" %>
-    <%= f.text_field :room_number, class: 'form-control', :placeholder => "例: 渋谷スキルハウス" %>
+    <%= f.label :room_img, "お部屋の写真" %>
+    <%= f.file_field :room_img, class: 'form-control' %>
   </div>
   <%= f.submit "部屋情報登録", class: "btn btn-primary" %>
 <% end %>

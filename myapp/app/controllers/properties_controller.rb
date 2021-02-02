@@ -1,9 +1,10 @@
 class PropertiesController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user,     only: :destroy
 
   def show
     @property = Property.find(params[:id])
+    @rooms = @property.rooms.paginate(page: params[:page])
   end
 
   def new

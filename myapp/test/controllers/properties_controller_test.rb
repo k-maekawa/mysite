@@ -8,7 +8,8 @@ class PropertiesControllerTest < ActionDispatch::IntegrationTest
     @property = properties(:shibuya)
   end
   
-  test "should get new" do
+  test "should get new with login" do
+    log_in_as(@user)
     get new_property_path
     assert_response :success
   end
@@ -40,8 +41,8 @@ class PropertiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect destroy when logged in as a non-admin" do
     log_in_as(@other_user)
-    assert_no_difference 'User.count' do
-      delete property_path(@user)
+    assert_no_difference 'Property.count' do
+      delete property_path(@property)
     end
     assert_redirected_to root_url
   end

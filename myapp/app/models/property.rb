@@ -1,4 +1,5 @@
 class Property < ApplicationRecord
+  has_many :rooms, dependent: :destroy
   validates :house_name , presence: true, length: { minimum:3, maximum: 50 }, uniqueness: true
   validates :area_name, presence: true, length: { maximum: 10 }
   validates :house_adress, presence: true, length: { minimum:3, maximum: 30 }, uniqueness: true

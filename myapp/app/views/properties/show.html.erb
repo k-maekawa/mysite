@@ -7,4 +7,12 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @property.rooms.any? %>
+      <h3>部屋情報一覧 (<%= @property.rooms.count %>)件</h3>
+      <ol class="rooms">
+        <%= render @rooms %>
+      </ol>
+      <%= will_paginate @rooms %>
+    <% end %>
 </div>

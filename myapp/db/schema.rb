@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_30_011102) do
+ActiveRecord::Schema.define(version: 2021_02_01_130741) do
 
   create_table "properties", force: :cascade do |t|
     t.string "house_name"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 2021_01_30_011102) do
     t.index ["house_name"], name: "index_properties_on_house_name", unique: true
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.string "vacant_room"
+    t.integer "room_number"
+    t.float "space"
+    t.string "room_type"
+    t.string "room_img"
+    t.integer "property_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["property_id", "created_at"], name: "index_rooms_on_property_id_and_created_at"
+    t.index ["property_id"], name: "index_rooms_on_property_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -36,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_01_30_011102) do
     t.boolean "admin", default: false
   end
 
+  add_foreign_key "rooms", "properties"
 end

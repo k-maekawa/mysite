@@ -1,0 +1,31 @@
+one:
+  vacant_room: 空室
+  room_number: 204
+  space: 24.6
+  room_type: ドミトリー
+  room_img: 20190806_2099476.jpg
+  property: shibuya
+
+two:
+  vacant_room: 空室
+  room_number: 506
+  space: 12.5
+  room_type: ルームシェア
+  room_img: 20190806_2099476.jpg
+  property: shibuya
+
+three:
+  vacant_room: 満室
+  room_number: 404
+  space: 16.3
+  room_type: 個室
+  room_img: 20190806_2099476.jpg
+  property: shibuya
+  
+four:
+  vacant_room: 満室
+  room_number: 1007
+  space: 8.7
+  room_type: ルームシェア
+  room_img: 20190806_2099476.jpg
+  property: shibuya

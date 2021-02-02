@@ -1,0 +1,23 @@
+<%= form_with(model: @room, local: true) do |f| %>
+  <%= render "shared/error_property_messages", object: f.object %>
+  <div class="field">
+    <%= f.radio_button :vacant_room, :vacant %>
+    <%= f.label :vacant_room, "空室", { value: :vacant, style: "display: inline-block;" } %>
+    <%= f.radio_button :vacant_room, :novacant %>
+    <%= f.label :vacant_room, "満室", { value: :novacant, style: "display: inline-block;" } %>
+
+    <%= f.label :room_number, "部屋番号" %>
+    <%= f.text_field :room_number, class: 'form-control', :placeholder => "例: 201" %>
+
+    <%= f.label :room_number, "広さ" %>
+    <%= f.text_field :room_number, class: 'form-control', :placeholder => "例: 10.7" %>
+
+    <%= f.label :room_type, "物件名" %>
+    <%= f.select :room_type,  {'個室': 1, 'ドミトリー': 2, 'ルームシェア': 3},
+                         { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+
+    <%= f.label :room_number, "物件名" %>
+    <%= f.text_field :room_number, class: 'form-control', :placeholder => "例: 渋谷スキルハウス" %>
+  </div>
+  <%= f.submit "部屋情報登録", class: "btn btn-primary" %>
+<% end %>

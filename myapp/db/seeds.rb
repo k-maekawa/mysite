@@ -93,3 +93,17 @@ Property.create!(house_name: "COURI025 下目黒",
                  house_skill: "Web開発エンジニア",
                  house_distance: 18,
                  rent: 64000)
+
+properties = Property.order(:room_number).take(6)
+3.times do
+  vacant_room = "満室"
+  room_number = 315
+  space = 24.4
+  room_type = "個室"
+  room_img = "20190806_2099476.jpg"
+  properties.each { |property| property.rooms.create!(vacant_room: vacant_room,
+                                                      room_number: room_number,
+                                                      space: space,
+                                                      room_type: room_type,
+                                                      room_img: room_img) }
+end

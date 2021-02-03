@@ -9,7 +9,8 @@ class RoomsController < ApplicationController
   def create
     @room = @property.rooms.build(room_params)
     if @room.save
-      redirect_to room_path(@room)
+      flash[:success] = "お部屋の情報登録しました！"
+      redirect_to @property
     else
       render "/new"
     end
@@ -34,6 +35,9 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    @room = Room.find_by(params[:id]).destroy
+    flash[:success] = "部屋情報が削除されました"
+    redirect_to root_url
   end
 
   private

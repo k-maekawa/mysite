@@ -1,7 +1,20 @@
-<li>
-  <%= link_to property.house_name, property %>
-  <% if current_user.admin? %>
-     <%= link_to "ユーザー削除", property, method: :delete,
+  <div class="container card-wrapper">
+    <ul class="card-deck form-deck">
+     <li class="card form-card">
+      <div class="card-body form-body">
+        <%= image_tag property.property_img.to_s, width: "300px",height: "200px"%>
+        <h4 class="card-title "><%= link_to property.house_name, property %></h4>
+        <ul class="card-text form-text text-center">
+        　<li class="form-content">家賃<br><%= property.rent %>円</li>
+          <li class="form-content">徒歩<br><%= property.house_distance %>分</li>
+          <li class="form-content">スキル<br><%= property.house_skill %></li>
+          <li class="form-content">住所<br><%= property.house_adress %></li>
+        <ul>
+      </div>
+    </li>
+   </ul>
+        <% if @user && current_user.admin? %>
+         <%= link_to "ユーザー削除", property, method: :delete,
                                   data: { confirm: "削除してもよろしいでしょうか？?" } %>
-  <% end %>
-</li>
+        <% end %>
+  </div>

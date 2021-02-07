@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
   end
 
   def create
+    @property = Property.find(params[:property_id])
     @room = @property.rooms.build(room_params)
     if @room.save
       flash[:success] = "お部屋の情報登録しました！"

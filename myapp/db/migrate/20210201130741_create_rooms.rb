@@ -6,7 +6,7 @@ class CreateRooms < ActiveRecord::Migration[6.1]
       t.float :space
       t.string :room_type
       t.string :room_img
-      t.references :property, null: false, foreign_key: true
+      t.references :property, foreign_key: true
 
       t.timestamps
     end

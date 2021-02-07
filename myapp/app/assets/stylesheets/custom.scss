@@ -74,7 +74,6 @@ a.introduce {
   color: lavenderblush;
 }
 
-
 /* erea-serch */
 
 .erea-tokyo {
@@ -104,7 +103,6 @@ div.btn-toolbar {
   height: 250px;
   border-radius: 20px;
 }
-
 
 /* home-card */
 
@@ -146,7 +144,6 @@ footer {
   box-sizing: border-box;
 }
 
-
 div.row {
   padding-bottom: 50px;
 }
@@ -184,15 +181,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 /* forms */
 
 input,
@@ -208,8 +196,6 @@ select,
     height: auto !important;
   }
 }
-
-
 
 #error_explanation {
   color: red;
@@ -267,7 +253,6 @@ input.button-primary {
   color: black;
 }
 
-
 /* Properties index */
 
 .properties {
@@ -283,18 +268,9 @@ input.button-primary {
 
 /* property-card */
 
-.form-deck {
-  display: flex;
-  margin: 50px 0;
-  width: 100%;
-}
-
-card-wrapper {
-  display: flex;
-}
-
 .form-text {
   padding: 0 100px;
+
 }
 
 .form-body {
@@ -305,11 +281,63 @@ h4.card-title {
   font-weight: bold;
 }
 
+.property-image {
+  padding-top: 20px;
+}
 
-.form-card {
-  width: 50%;
+.property-box {
+  display: flex;
+}
 
-  &:hover {
-    background-color: #c9c9c9;
-  }
+.form-card:hover {
+  background-color: #c9c9c9;
+}
+
+/* show-property */
+
+.show-property {
+  padding-top: 50px;
+}
+
+/* 検索ボックス */
+dl.searchbox {
+  width: 350px;
+  position: relative;
+  background-color: #fff;
+
+}
+
+
+
+
+
+dl.searchbox dd {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 30%;
+  text-align: center;
+}
+
+
+
+.search-btn:hover {
+  background: #228B22;
+}
+
+.user-showpage {
+  padding-top: 50px;
+}
+
+.form-center {
+  margin: 0 auto;
+  width: 300px;
+}
+
+#address {
+  margin-top: 20px;
+}
+
+.help-containar {
+  padding-top: 30px;
 }

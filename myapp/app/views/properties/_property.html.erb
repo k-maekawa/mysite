@@ -1,9 +1,10 @@
   <div class="container card-wrapper">
-    <ul class="card-deck form-deck">
+   <div class="row">
+    <ul class="card-deck form-deck col-md-offset-2 col-md-7">
      <li class="card form-card">
       <div class="card-body form-body">
-        <%= image_tag property.property_img.to_s, width: "300px",height: "200px"%>
-        <h4 class="card-title "><%= link_to property.house_name, property %></h4>
+        <%= image_tag property.property_img.to_s, width: "300px",height: "230px"%>
+        <h3 class="card-title "><%= link_to property.house_name, property %></h3>
         <ul class="card-text form-text text-center">
         　<li class="form-content">家賃<br><%= property.rent %>円</li>
           <li class="form-content">徒歩<br><%= property.house_distance %>分</li>

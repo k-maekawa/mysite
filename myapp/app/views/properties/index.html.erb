@@ -1,10 +1,10 @@
 <% provide(:title, 'All Properties') %>
 <h1>物件一覧</h1>
 
-<%= will_paginate %>
+<%= paginate @properties %>
 
 <ul class="properties">
   <%= render @properties %>
 </ul>
 
-<%= will_paginate %>
+<%= paginate @properties %>

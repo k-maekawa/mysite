@@ -22,7 +22,8 @@ class PropertiesController < ApplicationController
   end
 
   def index
-    @properties = Property.paginate(page: params[:page], per_page: 5)
+    @serach = Property.ransack(params[:search])
+    @properties = @search.result(distinct: true).paginate(page: params[:page], per_page: 5)
   end
 
   def edit

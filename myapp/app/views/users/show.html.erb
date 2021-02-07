@@ -1,11 +1,12 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<div class="container user-showpage">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-2">
+      <%= image_tag @user.user_img.to_s, width: "250px", height: "250px" %>
+    </div>
+    <div class="col-xs-4">
+       <h3><span>ユーザー名:</span><br><br><%= @user.name %></h3><br>
+       <h3><span>メールアドレス:</span><br><br><%= @user.email %></h3>
+    </div>
+  </div>
 </div>

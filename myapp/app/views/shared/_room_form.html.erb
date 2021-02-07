@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-      <%= form_with(model: @room, local: true) do |f| %>
+      <%= form_with(model: [@room, @property], local: true) do |f| %>
         <%= render "shared/error_room_messages", object: f.object %>
        <div class="field">
         <%= f.label :vacant_room, "空室状況" %>

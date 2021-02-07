@@ -1,22 +1,80 @@
 <% provide(:title, @property.house_name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-    <h3>
+<div class="container-fluid">
+ <div class="row show-property">
+  <div class="col-md-3 col-md-offset-1">
+    <p>物件名<p>
+    <h4>
      <%= @property.house_name %>
-    </h3>
-    <p>
-      <strong>物件写真</strong>
-      <%= image_tag @property.property_img.url if @property.property_img? %>
-    </p>
+    </h4>
+     <p class= "property-image">物件写真</p>
+      <%= image_tag @property.property_img.to_s, width: "340px", height: "250px" %>
+  </div>
 
+  <div class = "col-md-3 col-md-offset-1">
+   <h4>物件詳細</h4>
     <ul class="list-group">
-     <li class="list-group-item"><%= @property.rent %></li>
-     <li class="list-group-item"><%= @property.area_name %></li>
-     <li class="list-group-item"><%= @property.house_station %></li>
-     <li class="list-group-item"><%= @property.house_distance %></li>
-     <li class="list-group-item"><%= @property.house_skill %></li>
-    <ul class="list-group">
-      </section>
-  </aside>
+     <li class="list-group-item"><span>家賃:</span><br><%= @property.rent %><span>円</span></li>
+     <li class="list-group-item"><span>エリア:</span><br><%= @property.area_name %></li>
+     <li class="list-group-item"><span>最寄駅:</span><br><%= @property.house_station %><span>駅</span></li>
+     <li class="list-group-item"><span>徒歩:</span><br><%= @property.house_distance %><span>分</span></li>
+     <li class="list-group-item"><span>スキル:</span><br><%= @property.house_skill %></li>
+     <li class="list-group-item"><span>住所:</span><br><%= @property.house_adress %></li>
+    </ul>
+  </div>
+
+  <div class = "col-md-3 col-md-offset-1">
+  <h3>地図検索</h3>
+  <div id="display"></div>
+<div id='map'></div>
+
+<style>
+#map {
+  height: 250px;
+  width: 250px;
+}
+</style>
+
+<script>
+let map
+let geocoder
+// 下の1行を追加 
+const display = document.getElementById('display')
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.68134945898214, lng: 139.76708187051793},
+    zoom: 18,
+  });
+
+  marker = new google.maps.Marker({
+    position:  {lat: 35.68134945898214, lng: 139.76708187051793},
+    map: map
+  });
+}
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+      display.textContent = "検索結果：" + results[ 0 ].geometry.location
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3EpjmKyyrszpNxPrdO1SM6jnYUKj4fnU&callback=initMap" async defer></script>
+<input id="address" type="textbox" value=<%=@property.house_adress%>>
+<input type="button" value="Encode" onclick="codeAddress()">
+
+</div>
+ </div>
 </div>

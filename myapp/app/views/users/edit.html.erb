@@ -18,6 +18,9 @@
         <%= f.label :password_confirmation, "パスワード再確認" %>
         <%= f.password_field :password_confirmation, class: "form-control user-forms", :placeholder =>"再度パスワードを入れてください" %>
 
+        <%= f.label :user_img, "ユーザー画像" %>
+        <%= f.file_field :user_img, class: "form-control user-forms" %>
+
         <%= f.submit "ユーザー情報を更新する", class: "btn btn-primary" %>
     　<% end %>
   </div>

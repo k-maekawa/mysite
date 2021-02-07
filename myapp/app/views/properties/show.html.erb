@@ -23,58 +23,83 @@
   </div>
 
   <div class = "col-md-3 col-md-offset-1">
-  <h3>地図検索</h3>
-  <div id="display"></div>
-<div id='map'></div>
+    <h3>地図検索</h3>
+   <div id="display"></div>
+   <div id='map'></div>
 
-<style>
-#map {
-  height: 250px;
-  width: 250px;
-}
-</style>
-
-<script>
-let map
-let geocoder
-// 下の1行を追加 
-const display = document.getElementById('display')
-
-function initMap(){
-  geocoder = new google.maps.Geocoder()
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 35.68134945898214, lng: 139.76708187051793},
-    zoom: 18,
-  });
-
-  marker = new google.maps.Marker({
-    position:  {lat: 35.68134945898214, lng: 139.76708187051793},
-    map: map
-  });
-}
-
-function codeAddress(){
-  let inputAddress = document.getElementById('address').value;
-
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-      display.textContent = "検索結果：" + results[ 0 ].geometry.location
-    } else {
-      alert('該当する結果がありませんでした：' + status);
+    <style>
+    #map {
+    height: 250px;
+    width: 250px;
     }
-  });   
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3EpjmKyyrszpNxPrdO1SM6jnYUKj4fnU&callback=initMap" async defer></script>
-<input id="address" type="textbox" value=<%=@property.house_adress%>>
-<input type="button" value="Encode" onclick="codeAddress()">
+    </style>
 
-</div>
- </div>
+        <script>
+        let map
+        let geocoder
+
+        const display = document.getElementById('display')
+
+        function initMap(){
+        geocoder = new google.maps.Geocoder()
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 35.68134945898214, lng: 139.76708187051793},
+            zoom: 18,
+        });
+
+        marker = new google.maps.Marker({
+            position:  {lat: 35.68134945898214, lng: 139.76708187051793},
+            map: map
+        });
+        }
+
+        function codeAddress(){
+        let inputAddress = document.getElementById('address').value;
+
+        geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+            if (status == 'OK') {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+            display.textContent = "検索結果：" + results[ 0 ].geometry.location
+            } else {
+            alert('該当する結果がありませんでした：' + status);
+            }
+        });   
+        }
+        </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3EpjmKyyrszpNxPrdO1SM6jnYUKj4fnU&callback=initMap" async defer></script>
+    <input id="address" type="textbox" value=<%=@property.house_adress%>>
+    <input type="button" value="検索" onclick="codeAddress()">
+   </div>
+   <div class = "col-md-8 col-md-offset-2">
+   <table class="table">
+    <thead>
+        <tr>
+            <th>空室状況</th>
+            <th>部屋番号</th>
+            <th>部屋タイプ</th>
+            <th>部屋の広さ</th>
+            <th>部屋の写真</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @rooms.each do |room| %>
+        <tr>
+            <td><%= room.vacant_room %></td>
+            <td><%= room.room_number %></td>
+            <td><%= room.room_type %></td>
+            <td><%= room.space %><space>㎡</space></td>
+            <td><%= image_tag room.room_img.to_s, width: "30px", height: "30px" %></td>
+        </tr>
+        <% end %>
+        <td><%= link_to "部屋を新規登録する",new_property_room_path(@property) %></td>
+    </tbody>
+</table>
+   </div>
+  </div>
 </div>

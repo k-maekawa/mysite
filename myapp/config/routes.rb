@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     post "/guest_login", to: "sessions#new_guest"
   end
   resources :users
-  resources :properties
-  resources :rooms
+  resources :properties do
+    resources :rooms, only: [:new, :create, :edit, :update]
+  end
   post "properties/:property_id/rooms", to: "rooms#create"
 end

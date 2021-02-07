@@ -10,7 +10,7 @@
 
 <div class="input-group form-center">
   <%= search_form_for @search do |f| %>
-    <div><%= f.search_field :house_name_or_house_skill_or_house_adress_or_rent_or_area_name_or_house_distance_cont ,placeholder: '検索例: 渋谷/Web開発/会計士' %></div>
+    <div><%= f.search_field :house_name_or_house_skill_or_house_adress_or_rent_or_area_name_or_house_distance_or_house_station_or_rooms_space_or_rooms_vacant_room_or_rooms_room_type_or_rooms_room_number_cont ,placeholder: '検索例: 渋谷/Web開発/会計士' %></div>
     <div><%= f.submit ("検索") , class: 'btn btn-primary'%></div>
   <% end %>
 </div>
@@ -21,18 +21,18 @@
   <div class="btn-toolbar">
     <h3 class="erea-tokyo">東京</h3>
     <div class="btn-group">
-      <%= link_to "渋谷/青山" ,"#" ,class: "btn btn-outline-secondary" %>
-      <%= link_to "新宿/中野" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "池袋/赤羽" ,"#" ,class: "btn btn-outline-secondary" %>
-      <%= link_to "品川/蒲田" ,"#" ,class: "btn btn-outline-secondary" %>
-      <%= link_to "上野/北千住" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "下北沢/吉祥寺" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "飯田橋/四谷" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "赤坂/大手町" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "銀座/門前仲町" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "錦糸町/押上" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "自由が丘/二子玉川" ,"#" ,class:"btn btn-outline-secondary" %>
-      <%= link_to "調布/立川" ,"#" ,class:"btn btn-outline-secondary" %>
+      <%= link_to "渋谷/青山" ,properties_path(@search, :'q[area_name_cont' => "渋谷") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "新宿/中野" ,properties_path(@search, :'q[area_name_cont' => "新宿") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "池袋/赤羽" ,properties_path(@search, :'q[area_name_cont' => "池袋") ,class: "btn btn-outline-secondary" %>
+      <%= link_to "品川/蒲田" ,properties_path(@search, :'q[area_name_cont' => "品川") ,class: "btn btn-outline-secondary" %>
+      <%= link_to "上野/北千住" ,properties_path(@search, :'q[area_name_cont' => "上野") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "下北沢/吉祥寺" ,properties_path(@search, :'q[area_name_cont' => "下北沢") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "飯田橋/四谷" ,properties_path(@search, :'q[area_name_cont' => "飯田橋") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "赤坂/大手町" ,properties_path(@search, :'q[area_name_cont' => "赤坂") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "銀座/門前仲町" ,properties_path(@search, :'q[area_name_cont' => "銀座") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "錦糸町/押上" ,properties_path(@search, :'q[area_name_cont' => "錦糸町") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "自由が丘/二子玉川" ,properties_path(@search, :'q[area_name_cont' => "自由が丘") ,class:"btn btn-outline-secondary" %>
+      <%= link_to "調布/立川" ,properties_path(@search, :'q[area_name_cont' => "調布") ,class:"btn btn-outline-secondary" %>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@
   <div class="card-deck home-deck">
     <div class="card home-card">
       <%= link_to image_tag("864bdd402c2cd2d5dabae98a0bddeaca.jpg", alt: "Rails logo", width: "200px",height: "200px"),
-                      "https://rubyonrails.org/" %>
+                      properties_path(@search, :'q[house_skill_cont' => "エンジニア") %>
       <div class="card-body">
         <h4 class="card-title">エンジニア向け物件</h4>
         <p class="card-text">エンジニアを目指す仲間を<br>見つけることができる物件を<br>取り揃えております！</p>
@@ -50,15 +50,15 @@
     </div>
     <div class="card home-card">
       <%= link_to image_tag("450-20171209210522.jpg", alt: "Rails logo", width: "200px"),
-                      "https://rubyonrails.org/" %>
+                       properties_path(@search, :'q[rooms_space_gteq' => 1)%>
       <div class="card-body">
-        <h4 class="card-title">8畳以上のお部屋</h4>
-        <p class="card-text">大きな部屋に住みたい！<br>こだわりを持ったお客様に<br>おすすめ！</p>
+        <h4 class="card-title">6畳以上のお部屋</h4>
+        <p class="card-text">比較的大きな部屋に住みたい！<br>こだわりを持つお客様はぜひ！<br>※6畳=10㎡で計算</p>
       </div>
     </div>
     <div class="card home-card">
       <%= link_to image_tag("a0155348_6124829.jpg", alt: "Rails logo", width: "200px",height: "200px"),
-                      "https://rubyonrails.org/" %>
+                      properties_path(@search, :'q[house_distance_lteq' => 5 ) %>
       <div class="card-body">
         <h4 class="card-title">駅近</h4>
         <p class="card-text">家が駅から近くないとイヤだ！そんなお客様に最寄り駅から<br>徒歩5分圏内の物件を紹介！</p>
@@ -66,7 +66,7 @@
     </div>
     <div class="card home-card">
       <%= link_to image_tag("original.jpg", alt: "Rails logo", width: "200px" ,height: "200px"),
-                      "https://rubyonrails.org/" %>
+                      properties_path(@search, :'q[rooms_room_type_cont' => "個室") %>
       <div class="card-body">
         <h4 class="card-title">個室</h4>
         <p class="card-text">シェアハウスはしたいけど<br>プライベートの時間も<br>大切にしたい方におすすめ！</p>
@@ -75,7 +75,7 @@
     <div class="card home-card">
       <div class="card-img">
         <%= link_to image_tag("003aa094f8051ab0bb9f0a733d26e766_s.jpg", alt: "Rails logo", width: "200px", height: "200px"),
-                      "003aa094f8051ab0bb9f0a733d26e766_s.jpg" %>
+                      properties_path(@search, :'q[rent_lteq' => 50000) %>
       </div>
       <div class="card-body">
         <h4 class="card-title">家賃5万円以下</h4>

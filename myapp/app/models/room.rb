@@ -1,6 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :property
-  default_scope -> { order(room_number: :desc) }
+  default_scope -> { order(room_number: :asc) }
   mount_uploader :room_img, RoomImgUploader
   validates :property_id, presence: true
   validates :vacant_room, presence: true

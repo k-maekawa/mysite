@@ -4,6 +4,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @room = @property.rooms
     @rooms = @property.rooms.paginate(page: params[:page])
   end
 
@@ -22,7 +23,7 @@ class PropertiesController < ApplicationController
   end
 
   def index
-    @serach = Property.ransack(params[:search])
+    @search = Property.ransack(params[:q])
     @properties = @search.result(distinct: true).paginate(page: params[:page], per_page: 5)
   end
 

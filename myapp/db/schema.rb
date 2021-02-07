@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_114953) do
     t.float "space"
     t.string "room_type"
     t.string "room_img"
-    t.integer "property_id", null: false
+    t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["property_id", "created_at"], name: "index_rooms_on_property_id_and_created_at"

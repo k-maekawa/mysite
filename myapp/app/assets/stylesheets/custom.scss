@@ -300,31 +300,6 @@ h4.card-title {
 }
 
 /* 検索ボックス */
-dl.searchbox {
-  width: 350px;
-  position: relative;
-  background-color: #fff;
-
-}
-
-
-
-
-
-dl.searchbox dd {
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  width: 30%;
-  text-align: center;
-}
-
-
-
-.search-btn:hover {
-  background: #228B22;
-}
-
 .user-showpage {
   padding-top: 50px;
 }
@@ -336,8 +311,4 @@ dl.searchbox dd {
 
 #address {
   margin-top: 20px;
-}
-
-.help-containar {
-  padding-top: 30px;
 }

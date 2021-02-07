@@ -214,11 +214,13 @@ Property.create!(house_name: "ryougoku-share 天空の中庭",
                  property_img: File.open("#{Rails.root}/app/assets/images/ryogoku.png"))
                  
                  
-properties = Property.order(:room_number).take(6)
-3.times do
-  vacant_room = "満室"
-  room_number = 315
-  space = 24.4
+properties = Property.order(:room_number).take(15)
+
+
+5.times do |n|
+  vacant_room = "空室"
+  room_number = 101 + n
+  space = 6.4 + n
   room_type = "個室"
   room_img = File.open("#{Rails.root}/app/assets/images/roommmm.png")
   properties.each { |property| property.rooms.create!(vacant_room: vacant_room,
@@ -226,4 +228,5 @@ properties = Property.order(:room_number).take(6)
                                                       space: space,
                                                       room_type: room_type,
                                                       room_img: room_img) }
+  
 end

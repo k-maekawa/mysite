@@ -106,4 +106,17 @@ class PropertyTest < ActiveSupport::TestCase
     @property.save
     assert_not duplicate_property.valid?
   end
+
+  test "associated rooms should be destroyed" do
+    @property.save
+    @property.rooms.create!(vacant_room: "空室",
+                            room_number: 201,
+                            space: 6.4,
+                            room_type: "個室",
+                            room_img: "20190806_2099476.jpg",
+                            property_id: @property.id)
+    assert_difference 'Room.count', -1 do
+      @property.destroy
+    end
+  end
 end

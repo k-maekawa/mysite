@@ -2,7 +2,12 @@ require "test_helper"
 
 class PropertyNewTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @user = users(:michael)
+  end
+
 test "invalid property infomation make" do
+  log_in_as(@user)
   get properties_new_path
   assert_no_difference 'Property.count' do
     post properties_path, params: { property: { house_name: "渋館",
@@ -19,6 +24,7 @@ test "invalid property infomation make" do
   end
 
   test "valid property infomation make" do
+    log_in_as(@user)
     get properties_new_path
     assert_difference 'Property.count', 1 do
       post properties_path, params: { property: { house_name: "渋谷区シェアハウス公民館",

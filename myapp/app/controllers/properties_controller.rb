@@ -1,9 +1,11 @@
 class PropertiesController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user,     only: :destroy
 
   def show
     @property = Property.find(params[:id])
+    @room = @property.rooms
+    @rooms = @property.rooms.paginate(page: params[:page])
   end
 
   def new
@@ -21,7 +23,8 @@ class PropertiesController < ApplicationController
   end
 
   def index
-    @properties = Property.paginate(page: params[:page], per_page: 5)
+    @search = Property.ransack(params[:q])
+    @properties = @search.result(distinct: true).paginate(page: params[:page], per_page: 5)
   end
 
   def edit
@@ -47,6 +50,6 @@ class PropertiesController < ApplicationController
   private
     def property_params
       params.require(:property).permit(:house_name, :area_name, :house_adress, :house_station,
-                                       :house_skill, :house_distance, :rent)
+                                       :house_skill, :house_distance, :rent, :property_img)
     end
   end

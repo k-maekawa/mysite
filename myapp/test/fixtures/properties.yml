@@ -5,4 +5,5 @@ shibuya:
   house_station: 渋谷,
   house_skill: Web制作エンジニア,
   house_distance: 8,
-  rent: 50000
+  rent: 50000,
+  property_img: images.jpg

@@ -6,7 +6,7 @@ unless Rails.env.development? || Rails.env.test?
       aws_secret_access_key: "eagD5yY1SPRx+iB85I9RLG/Wu/vN4bDqaJeEf30M",
       region: "ap-southeast-1",
     }
-
+    config.fog_provider = 'fog/aws'
     config.fog_directory = "port-folio-s3"
     config.cache_storage = :fog
   end

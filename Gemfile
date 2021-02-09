@@ -10,7 +10,7 @@ gem 'kaminari', '~> 0.17.0'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'devise'
 gem 'pry-rails'
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'ransack'
 gem 'aws-sdk-s3',              '1.46.0', require: false
